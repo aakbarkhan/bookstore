@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Books from "./redux/books/books";
-import Categories from "./redux/categories/categories";
-import Nav from "./components/nav";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Books from './redux/books/books';
+import Categories from './redux/categories/categories';
+import Nav from './components/nav';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,5 +15,5 @@ ReactDOM.render(
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );

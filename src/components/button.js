@@ -1,5 +1,5 @@
 const Button = () => (
-  <button type="button" onClick={() => console.log("hey")}>
+  <button type="button" onClick={() => 'hey'}>
     Remove Book
   </button>
 );

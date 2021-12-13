@@ -1,9 +1,7 @@
-const categories = () => {
-  return (
-    <div>
-      <p>Under construction</p>
-    </div>
-  );
-};
+const categories = () => (
+  <div>
+    <p>Under construction</p>
+  </div>
+);
 
 export default categories;
