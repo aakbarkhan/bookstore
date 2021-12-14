@@ -21,12 +21,7 @@ CRUD app.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
+To clone this project Run command: $git clone the reposiratory or press the green Code button in the upper right corner and choose to download from the Download ZIP link. To setup the webpack for this project.
 ### Prerequisites
 
 ### Setup
