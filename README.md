@@ -2,17 +2,17 @@
 
 # Project Name
 
-> One paragraph statement about the project.
+> In this project we will prepare a Book store for adding books usinf react and redux liberary.
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+CRUD app.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML& CSS
+- REACT & REDUX
+- Node.js
 
 ## Live Demo
 
@@ -31,7 +31,19 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
+Add linters from linters-config
+
+Set up a new project Create React App (CRA)
+
+to create a React application is using Create React App (CRA) and following the instructions in this guide
+
 ### Install
+
+npx create-react-app bookstore-react
+cd bookstore-react
+npm start
+Add React Redux
+npm install react-redux
 
 ### Usage
 
@@ -43,15 +55,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
+# Aku
+
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
+- GitHub: [@aakbarkhan](https://github.com/aakbarkhan)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
