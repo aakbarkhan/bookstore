@@ -33,7 +33,7 @@ Use Create React App (CRA)
 npx create-react-app bookstore
 cd bookstore
 npm start
-Add React Redux
+React Redux
 npm install react-redux
 
 ### Usage
