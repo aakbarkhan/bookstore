@@ -1,25 +1,18 @@
-import Book from './book';
+import { useSelector } from 'react-redux';
 import AddBooks from './addBooks';
+import Book from './book';
 
 const Books = () => {
-  const data = [
-    {
-      id: 1,
-      title: 'Action',
-      name: 'The Hunger Games',
-      author: 'Suzanne Collins',
-      endRate: '64',
-    },
-    {
-      id: 2,
-      title: 'Fiction',
-      name: 'Herry Potter',
-      author: 'J. K. Rowling',
-      endRate: '100',
-    }];
+  const books = useSelector((state) => state.booksReducer);
   return (
     <div>
-      <Book data={data} />
+      {books.map((task) => (
+        <Book
+          id={task.id}
+          key={task.id}
+          title={task.title}
+        />
+      ))}
       <AddBooks />
     </div>
   );

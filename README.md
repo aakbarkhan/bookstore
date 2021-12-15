@@ -26,18 +26,14 @@ To clone this project Run command: $git clone the reposiratory or press the gree
 
 ### Setup
 
-Add linters from linters-config
-
-Set up a new project Create React App (CRA)
-
-to create a React application is using Create React App (CRA) and following the instructions in this guide
+Use Create React App (CRA)
 
 ### Install
 
-npx create-react-app bookstore-react
-cd bookstore-react
+npx create-react-app bookstore
+cd bookstore
 npm start
-Add React Redux
+React Redux
 npm install react-redux
 
 ### Usage

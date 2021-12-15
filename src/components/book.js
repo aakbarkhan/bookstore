@@ -1,20 +1,28 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
-import Button from './button';
+import Button from './button';// eslint-disable-line
 
 const Book = (props) => {
-  const name = props;
+  const book = props;
   return (
-    <div key={name.data[0].id}>
-      <h1>{name.data[0].title}</h1>
-      <h2>{name.data[0].name}</h2>
-      <h2>{name.data[0].author}</h2>
-      <Button />
-      <h1>{name.data[1].title}</h1>
-      <h2>{name.data[1].name}</h2>
-      <h2>{name.data[1].author}</h2>
-
-      <Button />
+    <div className="book">
+      <div className="title">
+        <article>
+          <p>Action</p>
+          <h2>{book.title}</h2>
+          <p>Author</p>
+          <ul>
+            <li>Comments</li>
+            <li>
+              <Button id={book.id} />
+            </li>
+            <li>Edit</li>
+          </ul>
+        </article>
+      </div>
+      <div className="current">
+        <h3>Current Chapter</h3>
+        <h3><b>Chapter 17</b></h3>
+        <input type="button" value="Update Progress" />
+      </div>
     </div>
   );
 };
