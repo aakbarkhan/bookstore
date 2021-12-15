@@ -3,10 +3,10 @@ import AddBooks from './addBooks';
 import Book from './book';
 
 const Books = () => {
-  const numCakes = useSelector((state) => state.booksReducer);
+  const books = useSelector((state) => state.booksReducer);
   return (
     <div>
-      {numCakes.map((task) => (
+      {books.map((task) => (
         <Book
           id={task.id}
           key={task.id}
