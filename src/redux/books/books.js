@@ -17,7 +17,6 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-    //   console.log(state);
       return state.filter((book) => book.id !== action.payload.id);// eslint-disable-line
     default:
       return state;

@@ -1,14 +1,19 @@
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react';
 import { addBook } from '../redux/books/books';
 
 const AddBooks = () => {
   const dispatch = useDispatch();
+  const [state, setState] = useState('');
 
-  const submitBookToStore = (e) => {
+  const OnChangeHandle = (e) => {
+    setState(e.target.value);
+  };
+  const submitBookToStore = () => {
     const newBook = {
       id: uuidv4(),
-      title: e.target.previousElementSibling.previousElementSibling.value,
+      title: state,
       author: '',
     };
 
@@ -19,7 +24,7 @@ const AddBooks = () => {
   };
   return (
     <form>
-      <input placeholder="ADD NEW BOOK" />
+      <input value={state} onChange={OnChangeHandle} placeholder="ADD NEW BOOK" />
       <select name="books" id="book">
         <option value="Science fiction">The God&apos;s Equation</option>
         <option value="Action">Volvo</option>
