@@ -18,9 +18,6 @@ const AddBooks = () => {
     };
 
     dispatch(addBook(newBook));
-
-    // dispatch an action and pass it the newBook object (your action's payload)
-  // dispatch(addBook(newBook));
   };
   return (
     <form>

@@ -6,7 +6,7 @@ const Book = (props) => {
     <div className="book">
       <div className="title">
         <article>
-          <p>Action</p>
+          <p>{book.category}</p>
           <h2>{book.title}</h2>
           <p>Author</p>
           <ul>
