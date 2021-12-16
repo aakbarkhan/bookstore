@@ -1,20 +1,117 @@
 body {
   margin: 0;
-  background-color: blanchedalmond;
+  background-color: white;
+}
+
+#root {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #f5f6fa;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  margin-top: 80px;
 }
 
 .book {
+  margin: 0 auto;
   display: flex;
   border: 1px solid yellowgreen;
-  padding-left: 1em;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 30px;
+  width: 80%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: white;
 }
 
 .title {
-  width: 50%;
+}
+
+.nav {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 75px;
+  background-color: white;
+}
+
+.same {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.heading {
+  color: #0290ff;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 ul {
-  display: flex;
   list-style: none;
   padding-left: 0;
+}
+
+a {
+  color: #a4a7af;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 10px;
+}
+
+.action {
+  font-family: 'Times New Roman', Times, serif;
+  color: #a4a7af;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.current {
+  padding-right: 30px;
+}
+
+.comment-links {
+  display: flex;
+  color: #4386bf;
+}
+
+.btn {
+  border: none;
+  color: #4386bf;
+  background-color: white;
+}
+
+.progress {
+  background-color: #0290ff;
+  border: none;
+}
+
+.form-div {
+  margin: 0 auto;
+  width: 85%;
+  padding-bottom: 100px;
+}
+
+.inp {
+  width: 70%;
+}
+
+.round {
+  border-radius: 100%;
+  width: 80px;
+  border: 3px solid gray;
+  height: 80px;
+  margin-top: 21px;
+  border-bottom: 3px solid aqua;
+  border-left: 3px solid aqua;
+}
+
+.wrapper-round {
+  display: flex;
 }
