@@ -24,14 +24,14 @@ const Book = (props) => {
       <div className="wrapper-round">
         <div className="round" />
         <div>
-          <h3>64%</h3>
-          <p>Completed</p>
+          <h3 className="percent top">64%</h3>
+          <p className="percent">Completed</p>
         </div>
       </div>
       <div className="current">
-        <h3>Current Chapter</h3>
-        <h3><b>Chapter 17</b></h3>
-        <input className="progress" type="button" value="Update Progress" />
+        <h3 className="cur-head">CURRENT CHAPTER</h3>
+        <h3 className="cur-head sec">Chapter 17</h3>
+        <input className="progress" type="button" value="UPDATE PROGRESS" />
       </div>
     </div>
   );

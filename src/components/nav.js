@@ -10,7 +10,7 @@ const Nav = () => (
         <Link to="/categories">CATEGORIES</Link>
       </ul>
     </nav>
-    <img src={id} alt="id" width="30px" height="30px" />
+    <img src={id} alt="id" width="40px" height="40px" />
   </div>
 );
 

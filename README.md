@@ -1,12 +1,16 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# BOOKSTORE
 
-> In this project we will prepare a Book store for adding books usinf react and redux liberary.
+> In this Book Store project:
+- Display all the books.
+- Add the book.
+- Select the category.
+- Delete the book/books.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./bookstore.png)
 
-CRUD app.
+This project was bootstrapped with Create React App.
 
 ## Built With
 
@@ -21,29 +25,18 @@ CRUD app.
 
 ## Getting Started
 
-To clone this project Run command: $git clone the reposiratory or press the green Code button in the upper right corner and choose to download from the Download ZIP link. To setup the webpack for this project.
-### Prerequisites
-
+- To clone this project Run command: $git clone
+- used the link git@github.com:aakbarkhan/bookstore.git reposiratory.
+- OR press the green Code button in the upper right corner and choose to download from the Download ZIP link.
 ### Setup
 
-Use Create React App (CRA)
-
+- Use Create React App (CRA).
 ### Install
-
-npx create-react-app bookstore
-cd bookstore
-npm start
-React Redux
-npm install react-redux
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
+- npx create-react-app bookstore
+- cd bookstore
+- npm start
+- React Redux
+- npm install react-redux
 ## Authors
 
 # Aku
