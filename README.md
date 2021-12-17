@@ -20,7 +20,7 @@ This project was bootstrapped with Create React App.
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://angry-bassi-da3bfc.netlify.app/)
 
 
 ## Getting Started
