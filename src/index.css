@@ -55,11 +55,6 @@ a {
   font-size: 10px;
 }
 
-.percent {
-  margin: 0;
-  padding: 0;
-}
-
 .action {
   font-family: 'Times New Roman', Times, serif;
   color: #a4a7af;
@@ -77,6 +72,11 @@ h2 {
   padding-right: 30px;
   display: flex;
   flex-direction: column;
+}
+
+.per {
+  margin-left: 10px;
+  margin-top: 40px;
 }
 
 .cur-head {
@@ -121,6 +121,11 @@ img {
   border-right: 1px solid rgb(165, 164, 164);
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.percent {
+  margin: 0;
+  padding: 0;
 }
 
 .progress {
