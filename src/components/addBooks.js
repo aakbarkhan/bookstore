@@ -20,6 +20,7 @@ const AddBooks = () => {
     dispatch(addBookToApi(newBook));
     setValue('');
     setCategory('');
+    window.location.reload();
   };
   const categoryHandler = (e) => {
     setCategory(e.target.value);
