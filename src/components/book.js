@@ -4,13 +4,12 @@ import { removeBookFromApi } from '../redux/books/books';
 const Book = (props) => {
   const book = props;
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getBookFromApi());
-  // }, []);
   const remove = () => {
     dispatch(removeBookFromApi(book.id));
-    window.location.reload();
+    // dispatch(getBookFromApi());
+    // window.location.reload();
   };
+
   return (
     <div className="book">
       <div className="title">
@@ -21,6 +20,7 @@ const Book = (props) => {
           <p className="action">{book.category}</p>
           <h2>{book.title}</h2>
           <p className="action">{book.author}</p>
+          <p className="action">{book.description}</p>
           <ul className="comment-links">
             <li>Comments</li>
             <li>

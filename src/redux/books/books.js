@@ -3,7 +3,9 @@ const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const FETCH_BOOK = 'bookStore/books/FETCH_BOOK';
 
 const url = 'http://localhost:3001/books';
-const initialState = [];
+const initialState = {
+  bookLists: [],
+};
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
@@ -45,14 +47,17 @@ export const removeBookFromApi = (payload) => async (dispatch) => {
     headers: { 'Content-Type': 'application/json' },
   });
   dispatch(removeBook(payload));
+  dispatch(getBookFromApi());
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      return { ...state, bookLists: action.payload };
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      // console.log(state, 'state fefore remove click');
+      return state.bookLists.filter((book) => book.id !== action.payload);
+      // return state;
     case FETCH_BOOK:
       // return Object.entries(action.payload).map(([key, value]) => {
       //   const [book] = value;
@@ -61,7 +66,7 @@ const reducer = (state = initialState, action) => {
       //     ...book,
       //   };
       // });
-      return [...state, action.payload];
+      return { ...state, bookLists: action.payload };
     default:
       return state;
   }

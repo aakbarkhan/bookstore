@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
-import { addBookToApi } from '../redux/books/books';
+import { addBookToApi, getBookFromApi } from '../redux/books/books';
 
 const AddBooks = () => {
   const [value, setValue] = useState('');
@@ -20,7 +20,8 @@ const AddBooks = () => {
     dispatch(addBookToApi(newBook));
     setValue('');
     setCategory('');
-    window.location.reload();
+    // window.location.reload();
+    dispatch(getBookFromApi());
   };
   const categoryHandler = (e) => {
     setCategory(e.target.value);

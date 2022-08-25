@@ -7,14 +7,17 @@ import { getBookFromApi } from '../redux/books/books';
 const Books = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.booksReducer);
-  console.log(books, 'books');
+  // const [localstate, setLocalState] = useState();
+  console.log(books.bookLists, 'books');
+
   useEffect(() => {
     dispatch(getBookFromApi());
   }, []);
   return (
     <div>
-      {books[0]?.map((book) => (
+      {books.bookLists?.map((book) => (
         <Book
+          // setLocalState={setLocalState}
           id={book.id}
           key={book.id}
           title={book.title}
