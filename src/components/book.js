@@ -4,18 +4,28 @@ import { removeBookFromApi } from '../redux/books/books';
 const Book = (props) => {
   const book = props;
   const dispatch = useDispatch();
-
+  // useEffect(() => {
+  //   dispatch(getBookFromApi());
+  // }, []);
+  const remove = () => {
+    dispatch(removeBookFromApi(book.id));
+    // window.location.reload();
+  };
   return (
     <div className="book">
       <div className="title">
+        <div>
+          <img src={book.image} alt={book.title} />
+        </div>
         <article>
           <p className="action">{book.category}</p>
           <h2>{book.title}</h2>
-          <p className="action">Suzanne Collins</p>
+          <p className="action">{book.author}</p>
+          <p className="action">{book.description}</p>
           <ul className="comment-links">
             <li>Comments</li>
             <li>
-              <button className="btn" type="button" onClick={() => dispatch(removeBookFromApi(book.id))}>Remove</button>
+              <button className="btn" type="button" onClick={remove}>Remove</button>
             </li>
             <li>Edit</li>
           </ul>

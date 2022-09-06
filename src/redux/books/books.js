@@ -2,8 +2,11 @@ const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const FETCH_BOOK = 'bookStore/books/FETCH_BOOK';
 
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/DPo4nlYS7MkRGLDUZ9ls/books/';
-const initialState = [];
+const url = 'http://localhost:3001/books';
+const initialState = {
+  bookList: [],
+  status: 'idle',
+};
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
@@ -21,19 +24,26 @@ export const getBook = (payload) => ({
 });
 
 export const addBookToApi = (payload) => async (dispatch) => {
-  await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/DPo4nlYS7MkRGLDUZ9ls/books', {
+  await fetch('http://localhost:3001/books', {
     method: 'POST',
     body: JSON.stringify(payload),
     headers: { 'Content-Type': 'application/json' },
   }).then((result) => {
-    if (result.status === 201) {
+    if (result.ok) {
+      // console.log(payload, 'payload');
       dispatch(addBook(payload));
     }
   });
 };
 
+export const getBookFromApi = () => async (dispatch) => {
+  const request = await fetch('http://localhost:3001/books');
+  const response = await request.json();
+  dispatch(getBook(response));
+};
+
 export const removeBookFromApi = (payload) => async (dispatch) => {
-  await fetch(`${url}${payload}`, {
+  await fetch(`${url}/${payload}`, {
     method: 'DELETE',
     body: JSON.stringify(),
     headers: { 'Content-Type': 'application/json' },
@@ -41,26 +51,25 @@ export const removeBookFromApi = (payload) => async (dispatch) => {
   dispatch(removeBook(payload));
 };
 
-export const getBookFromApi = () => async (dispatch) => {
-  const request = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/DPo4nlYS7MkRGLDUZ9ls/books');
-  const response = await request.json();
-  dispatch(getBook(response));
-};
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      return { ...state, bookList: [...state.bookList, action.payload], status: 'addbooked' };
     case REMOVE_BOOK:
-      return state.filter((book) => book.item_id !== action.payload);
+      // console.log(state[0], 'state fefore remove click');
+      // eslint-disable-next-line no-case-declarations
+      const arr = state.bookList.filter((book) => book.id !== action.payload);
+      return { ...state, bookList: arr, status: 'removed' };
+      // return state;
     case FETCH_BOOK:
-      return Object.entries(action.payload).map(([key, value]) => {
-        const [book] = value;
-        return {
-          item_id: key,
-          ...book,
-        };
-      });
+      // return Object.entries(action.payload).map(([key, value]) => {
+      //   const [book] = value;
+      //   return {
+      //     item_id: key,
+      //     ...book,
+      //   };
+      // });
+      return { ...state.bookList, bookList: action.payload, status: 'success' };
     default:
       return state;
   }
