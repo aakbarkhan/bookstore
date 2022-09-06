@@ -52,7 +52,9 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      // console.log(state[0], 'state fefore remove click');
+      return state[0].filter((book) => book.id !== action.payload);
+      // return state;
     case FETCH_BOOK:
       // return Object.entries(action.payload).map(([key, value]) => {
       //   const [book] = value;

@@ -9,7 +9,7 @@ const Book = (props) => {
   // }, []);
   const remove = () => {
     dispatch(removeBookFromApi(book.id));
-    window.location.reload();
+    // window.location.reload();
   };
   return (
     <div className="book">
@@ -21,6 +21,7 @@ const Book = (props) => {
           <p className="action">{book.category}</p>
           <h2>{book.title}</h2>
           <p className="action">{book.author}</p>
+          <p className="action">{book.description}</p>
           <ul className="comment-links">
             <li>Comments</li>
             <li>
