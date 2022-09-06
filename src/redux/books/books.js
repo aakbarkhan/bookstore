@@ -3,7 +3,10 @@ const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const FETCH_BOOK = 'bookStore/books/FETCH_BOOK';
 
 const url = 'http://localhost:3001/books';
-const initialState = [];
+const initialState = {
+  bookList: [],
+  status: 'idle',
+};
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
@@ -26,7 +29,8 @@ export const addBookToApi = (payload) => async (dispatch) => {
     body: JSON.stringify(payload),
     headers: { 'Content-Type': 'application/json' },
   }).then((result) => {
-    if (result.status === 201) {
+    if (result.ok) {
+      // console.log(payload, 'payload');
       dispatch(addBook(payload));
     }
   });
@@ -50,10 +54,12 @@ export const removeBookFromApi = (payload) => async (dispatch) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      return { ...state, bookList: [...state.bookList, action.payload], status: 'addbooked' };
     case REMOVE_BOOK:
       // console.log(state[0], 'state fefore remove click');
-      return state[0].filter((book) => book.id !== action.payload);
+      // eslint-disable-next-line no-case-declarations
+      const arr = state.bookList.filter((book) => book.id !== action.payload);
+      return { ...state, bookList: arr, status: 'removed' };
       // return state;
     case FETCH_BOOK:
       // return Object.entries(action.payload).map(([key, value]) => {
@@ -63,7 +69,7 @@ const reducer = (state = initialState, action) => {
       //     ...book,
       //   };
       // });
-      return [...state, action.payload];
+      return { ...state.bookList, bookList: action.payload, status: 'success' };
     default:
       return state;
   }
